@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80E3B50A8B0161E371536C62 /* Pods_Bills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337A311D46E69C2CF9E4399 /* Pods_Bills.framework */; };
+		F89FF35022BF2A2100A86372 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89FF34F22BF2A2100A86372 /* AddItemView.swift */; };
+		F89FF35222BF2CE600A86372 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89FF35122BF2CE600A86372 /* Transaction.swift */; };
 		F8A680DE22AB5B3500C05971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A680DD22AB5B3500C05971 /* AppDelegate.swift */; };
-		F8A680E022AB5B3500C05971 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A680DF22AB5B3500C05971 /* ViewController.swift */; };
-		F8A680E322AB5B3500C05971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A680E122AB5B3500C05971 /* Main.storyboard */; };
+		F8A680E022AB5B3500C05971 /* BankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A680DF22AB5B3500C05971 /* BankTableViewController.swift */; };
 		F8A680E622AB5B3500C05971 /* Bills.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8A680E422AB5B3500C05971 /* Bills.xcdatamodeld */; };
 		F8A680E822AB5B3600C05971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A680E722AB5B3600C05971 /* Assets.xcassets */; };
 		F8A680EB22AB5B3600C05971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A680E922AB5B3600C05971 /* LaunchScreen.storyboard */; };
+		F8A680F422AB5B9500C05971 /* FloatingAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A680F322AB5B9500C05971 /* FloatingAddButton.swift */; };
+		F8A6EAAE22AB647800F0DC0E /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6EAAD22AB647800F0DC0E /* AddCardViewController.swift */; };
+		F8A6EAB022AB655F00F0DC0E /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6EAAF22AB655F00F0DC0E /* AddCardView.swift */; };
+		F8A6EAB322AB7D7D00F0DC0E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6EAB222AB7D7D00F0DC0E /* Card.swift */; };
+		F8DABC2022BEBF7700ED69F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8DABC1F22BEBF7700ED69F9 /* GoogleService-Info.plist */; };
+		F8E297A422BF1FC500CE04B9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E297A322BF1FC500CE04B9 /* UIViewControllerExtension.swift */; };
+		F8E297A822BF227400CE04B9 /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E297A722BF227400CE04B9 /* TransactionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4337A311D46E69C2CF9E4399 /* Pods_Bills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47B54504E9CFE9206861AB42 /* Pods-Bills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bills.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bills/Pods-Bills.release.xcconfig"; sourceTree = "<group>"; };
+		E05B9454A04BBAE8B2683837 /* Pods-Bills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bills.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bills/Pods-Bills.debug.xcconfig"; sourceTree = "<group>"; };
+		F89FF34F22BF2A2100A86372 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		F89FF35122BF2CE600A86372 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		F8A680DA22AB5B3500C05971 /* Bills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A680DD22AB5B3500C05971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8A680DF22AB5B3500C05971 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F8A680E222AB5B3500C05971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8A680DF22AB5B3500C05971 /* BankTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTableViewController.swift; sourceTree = "<group>"; };
 		F8A680E522AB5B3500C05971 /* Bills.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bills.xcdatamodel; sourceTree = "<group>"; };
 		F8A680E722AB5B3600C05971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8A680EA22AB5B3600C05971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8A680EC22AB5B3600C05971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8A680F322AB5B9500C05971 /* FloatingAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingAddButton.swift; sourceTree = "<group>"; };
+		F8A6EAAD22AB647800F0DC0E /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		F8A6EAAF22AB655F00F0DC0E /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		F8A6EAB222AB7D7D00F0DC0E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F8DABC1F22BEBF7700ED69F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8E297A322BF1FC500CE04B9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		F8E297A722BF227400CE04B9 /* TransactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E3B50A8B0161E371536C62 /* Pods_Bills.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		726F81CE4F7D02DFA56DE1F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4337A311D46E69C2CF9E4399 /* Pods_Bills.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA3DCD8FB122EAE799C91116 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E05B9454A04BBAE8B2683837 /* Pods-Bills.debug.xcconfig */,
+				47B54504E9CFE9206861AB42 /* Pods-Bills.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F8A680D122AB5B3500C05971 = {
 			isa = PBXGroup;
 			children = (
 				F8A680DC22AB5B3500C05971 /* Bills */,
 				F8A680DB22AB5B3500C05971 /* Products */,
+				EA3DCD8FB122EAE799C91116 /* Pods */,
+				726F81CE4F7D02DFA56DE1F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +96,63 @@
 		F8A680DC22AB5B3500C05971 /* Bills */ = {
 			isa = PBXGroup;
 			children = (
+				F8E297A622BF223600CE04B9 /* SupportingFiles */,
+				F8E297A522BF222500CE04B9 /* Controllers */,
+				F8E297A222BF1FAD00CE04B9 /* Extensions */,
+				F8A6EAB122AB7D6000F0DC0E /* Model */,
+				F8A680F222AB5B5400C05971 /* View */,
 				F8A680DD22AB5B3500C05971 /* AppDelegate.swift */,
-				F8A680DF22AB5B3500C05971 /* ViewController.swift */,
-				F8A680E122AB5B3500C05971 /* Main.storyboard */,
-				F8A680E722AB5B3600C05971 /* Assets.xcassets */,
-				F8A680E922AB5B3600C05971 /* LaunchScreen.storyboard */,
-				F8A680EC22AB5B3600C05971 /* Info.plist */,
 				F8A680E422AB5B3500C05971 /* Bills.xcdatamodeld */,
 			);
 			path = Bills;
+			sourceTree = "<group>";
+		};
+		F8A680F222AB5B5400C05971 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8A680F322AB5B9500C05971 /* FloatingAddButton.swift */,
+				F8A6EAAF22AB655F00F0DC0E /* AddCardView.swift */,
+				F89FF34F22BF2A2100A86372 /* AddItemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8A6EAB122AB7D6000F0DC0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8A6EAB222AB7D7D00F0DC0E /* Card.swift */,
+				F89FF35122BF2CE600A86372 /* Transaction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8E297A222BF1FAD00CE04B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F8E297A322BF1FC500CE04B9 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F8E297A522BF222500CE04B9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8A680DF22AB5B3500C05971 /* BankTableViewController.swift */,
+				F8A6EAAD22AB647800F0DC0E /* AddCardViewController.swift */,
+				F8E297A722BF227400CE04B9 /* TransactionTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F8E297A622BF223600CE04B9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F8A680E722AB5B3600C05971 /* Assets.xcassets */,
+				F8DABC1F22BEBF7700ED69F9 /* GoogleService-Info.plist */,
+				F8A680E922AB5B3600C05971 /* LaunchScreen.storyboard */,
+				F8A680EC22AB5B3600C05971 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8A680EF22AB5B3600C05971 /* Build configuration list for PBXNativeTarget "Bills" */;
 			buildPhases = (
+				FFBEB0B15FFB359B2C2782EA /* [CP] Check Pods Manifest.lock */,
 				F8A680D622AB5B3500C05971 /* Sources */,
 				F8A680D722AB5B3500C05971 /* Frameworks */,
 				F8A680D822AB5B3500C05971 /* Resources */,
+				D591EAD6FCC8AFAED8C85CF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,34 +217,85 @@
 			files = (
 				F8A680EB22AB5B3600C05971 /* LaunchScreen.storyboard in Resources */,
 				F8A680E822AB5B3600C05971 /* Assets.xcassets in Resources */,
-				F8A680E322AB5B3500C05971 /* Main.storyboard in Resources */,
+				F8DABC2022BEBF7700ED69F9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D591EAD6FCC8AFAED8C85CF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bills/Pods-Bills-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bills/Pods-Bills-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFBEB0B15FFB359B2C2782EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bills-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8A680D622AB5B3500C05971 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8A680E022AB5B3500C05971 /* ViewController.swift in Sources */,
+				F89FF35222BF2CE600A86372 /* Transaction.swift in Sources */,
+				F8A680E022AB5B3500C05971 /* BankTableViewController.swift in Sources */,
 				F8A680E622AB5B3500C05971 /* Bills.xcdatamodeld in Sources */,
+				F8A6EAB322AB7D7D00F0DC0E /* Card.swift in Sources */,
+				F8A6EAB022AB655F00F0DC0E /* AddCardView.swift in Sources */,
+				F8E297A422BF1FC500CE04B9 /* UIViewControllerExtension.swift in Sources */,
 				F8A680DE22AB5B3500C05971 /* AppDelegate.swift in Sources */,
+				F8A680F422AB5B9500C05971 /* FloatingAddButton.swift in Sources */,
+				F8A6EAAE22AB647800F0DC0E /* AddCardViewController.swift in Sources */,
+				F8E297A822BF227400CE04B9 /* TransactionTableViewController.swift in Sources */,
+				F89FF35022BF2A2100A86372 /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F8A680E122AB5B3500C05971 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8A680E222AB5B3500C05971 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F8A680E922AB5B3600C05971 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,37 +425,41 @@
 		};
 		F8A680F022AB5B3600C05971 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E05B9454A04BBAE8B2683837 /* Pods-Bills.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5A628MRTT;
-				INFOPLIST_FILE = Bills/Info.plist;
+				DEVELOPMENT_TEAM = 3H73SZFC45;
+				INFOPLIST_FILE = "$(SRCROOT)/Bills/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = us.blackmoon.Bills;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blackmoon.Bills;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F8A680F122AB5B3600C05971 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47B54504E9CFE9206861AB42 /* Pods-Bills.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5A628MRTT;
-				INFOPLIST_FILE = Bills/Info.plist;
+				DEVELOPMENT_TEAM = 3H73SZFC45;
+				INFOPLIST_FILE = "$(SRCROOT)/Bills/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = us.blackmoon.Bills;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blackmoon.Bills;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

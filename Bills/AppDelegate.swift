@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import FirebaseAuth
 import FirebaseFirestore
 
 @UIApplicationMain
@@ -20,12 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        let _window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController(rootViewController: BankTableViewController())
-        _window.rootViewController = navigationController        
-        window = _window
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        setRootController()
         return true
+    }
+    
+    func setRootController() {
+        let navigationController = UINavigationController(rootViewController: Auth.auth().currentUser == nil ? AuthenticationController() : BankTableViewController())
+        window?.rootViewController = navigationController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

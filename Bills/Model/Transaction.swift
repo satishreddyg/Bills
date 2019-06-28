@@ -14,6 +14,7 @@ struct Transaction {
     let date: Date?
     let notes: String?
     let onCardName: String?
+    let userId: String?
     
     init(withDict dict: [String: Any]) {
         self.cost = dict["cost"] as? Double
@@ -21,13 +22,15 @@ struct Transaction {
         self.date = dict["date"] as? Date
         self.notes = dict["notes"] as? String
         self.onCardName = dict["onCardName"] as? String
+        self.userId = dict["userId"] as? String
     }
     
-    init(withCost cost: Double, place: String, date: Date, notes: String, cardName: String = "") {
+    init(withCost cost: Double, place: String, date: Date, notes: String, cardName: String = "", userId: String) {
         self.cost = cost
         self.place = place
         self.date = date
         self.notes = notes
         self.onCardName = cardName
+        self.userId = userId
     }
 }

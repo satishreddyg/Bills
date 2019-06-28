@@ -74,7 +74,8 @@ class AddCardViewController: UIViewController {
         ref = db.collection("cards").addDocument(data: [
             "name": card.name!,
             "last4Digits": card.last4Digits!,
-            "isCreditCard": card.isCreditCard!
+            "isCreditCard": card.isCreditCard!,
+            "userId": card.userId!
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -94,7 +95,8 @@ class AddCardViewController: UIViewController {
             "place": transaction.place!,
             "date": transaction.date!,
             "notes": transaction.notes!,
-            "onCardName": "\(card?.name ?? "") - \(card?.last4Digits?.description ?? "")"
+            "onCardName": "\(card?.name ?? "") - \(card?.last4Digits?.description ?? "")",
+            "userId": transaction.userId!
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

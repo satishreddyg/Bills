@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AddItemView: UIView {
     
@@ -61,7 +62,7 @@ class AddItemView: UIView {
             callback(nil, .noSpentOn)
             return
         }
-        let transaction = Transaction(withCost: amount, place: spentAt, date: Date(), notes: notesTextView.text)
+        let transaction = Transaction(withCost: amount, place: spentAt, date: Date(), notes: notesTextView.text, userId: Auth.auth().currentUser!.uid)
         callback(transaction, nil)
     }
     

@@ -8,23 +8,35 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class BankTableViewController: UITableViewController {
     
     let db = Firestore.firestore()
     var cards: [Card] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         view.backgroundColor = .lightText
         tableView.tableFooterView = UIView()
         setTitle()
         addFloatingButton()
         loadCardData()
+        
+        let signOutBarButton = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(signOut))
+        navigationItem.rightBarButtonItem = signOutBarButton
+    }
+    
+    @objc private func signOut() {
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popViewController(animated: true)
+        } catch _ {}
     }
 
     private func loadCardData() {
-        db.collection("Cards").getDocuments() { (querySnapshot, err) in
+        db.collection("cards").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

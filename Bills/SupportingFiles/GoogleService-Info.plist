@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1064158788080-mps5hi79mfuhogcoc056keo87n7invpp.apps.googleusercontent.com</string>
+	<string>1064158788080-7gkp4jmdcp0abp6uh30mpri9nl1d71cp.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1064158788080-mps5hi79mfuhogcoc056keo87n7invpp</string>
+	<string>com.googleusercontent.apps.1064158788080-7gkp4jmdcp0abp6uh30mpri9nl1d71cp</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBhQBpF_f5fXVJFVX1MtJLYDQowmVyX7fE</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>us.blackmoon.Bills</string>
+	<string>com.blackmoon.Bills</string>
 	<key>PROJECT_ID</key>
 	<string>bills-ec2ec</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1064158788080:ios:92f87c5cfcfce5f8</string>
+	<string>1:1064158788080:ios:265daa712d456d25</string>
 	<key>DATABASE_URL</key>
 	<string>https://bills-ec2ec.firebaseio.com</string>
 </dict>

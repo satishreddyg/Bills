@@ -25,6 +25,8 @@ class TransactionTableViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         tableView.tableFooterView = UIView()
+        tableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: "TransactionTableViewCell")
+        
         setTitle()
         addFloatingButton()
         getTransactionsForCard()
@@ -76,14 +78,12 @@ class TransactionTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "transactionCell")
-        let transaction = transactions[indexPath.row]
-        cell.textLabel?.text = transaction.place
-        cell.detailTextLabel?.text = transaction.cost?.description
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell", for: indexPath) as! TransactionTableViewCell
+        cell.configureCell(with: transactions[indexPath.row])
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

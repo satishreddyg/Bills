@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		80E3B50A8B0161E371536C62 /* Pods_Bills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337A311D46E69C2CF9E4399 /* Pods_Bills.framework */; };
 		F8189A3B22C1981F00F4057F /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8189A3A22C1981F00F4057F /* AuthenticationController.swift */; };
+		F87B100222CC437D007A9CEC /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B100122CC437D007A9CEC /* TransactionTableViewCell.swift */; };
+		F87B100422CD7A8C007A9CEC /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B100322CD7A8C007A9CEC /* CardTableViewCell.swift */; };
+		F87B100622CD7AC4007A9CEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B100522CD7AC4007A9CEC /* Constants.swift */; };
+		F87B100822CD7B6B007A9CEC /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87B100722CD7B6B007A9CEC /* HelperFunctions.swift */; };
 		F8937BE822C66C3300CEEC5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8937BE722C66C3300CEEC5E /* GoogleService-Info.plist */; };
 		F89FF35022BF2A2100A86372 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89FF34F22BF2A2100A86372 /* AddItemView.swift */; };
 		F89FF35222BF2CE600A86372 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89FF35122BF2CE600A86372 /* Transaction.swift */; };
@@ -32,6 +36,10 @@
 		47B54504E9CFE9206861AB42 /* Pods-Bills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bills.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bills/Pods-Bills.release.xcconfig"; sourceTree = "<group>"; };
 		E05B9454A04BBAE8B2683837 /* Pods-Bills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bills.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bills/Pods-Bills.debug.xcconfig"; sourceTree = "<group>"; };
 		F8189A3A22C1981F00F4057F /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		F87B100122CC437D007A9CEC /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		F87B100322CD7A8C007A9CEC /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		F87B100522CD7AC4007A9CEC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F87B100722CD7B6B007A9CEC /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		F8937BE722C66C3300CEEC5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8937BEB22C69D4900CEEC5E /* Bills.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bills.entitlements; sourceTree = "<group>"; };
 		F89FF34F22BF2A2100A86372 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
@@ -122,6 +130,8 @@
 				F8A6EAAF22AB655F00F0DC0E /* AddCardView.swift */,
 				F89FF34F22BF2A2100A86372 /* AddItemView.swift */,
 				F8F68CEA22C19BCD00792FE8 /* AuthenticationView.swift */,
+				F87B100122CC437D007A9CEC /* TransactionTableViewCell.swift */,
+				F87B100322CD7A8C007A9CEC /* CardTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +172,8 @@
 				F8A680E922AB5B3600C05971 /* LaunchScreen.storyboard */,
 				F8937BE722C66C3300CEEC5E /* GoogleService-Info.plist */,
 				F8A680EC22AB5B3600C05971 /* Info.plist */,
+				F87B100522CD7AC4007A9CEC /* Constants.swift */,
+				F87B100722CD7B6B007A9CEC /* HelperFunctions.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -305,9 +317,13 @@
 				F8F68CED22C1A47F00792FE8 /* LocalStorage.swift in Sources */,
 				F8A6EAB022AB655F00F0DC0E /* AddCardView.swift in Sources */,
 				F8E297A422BF1FC500CE04B9 /* UIViewControllerExtension.swift in Sources */,
+				F87B100622CD7AC4007A9CEC /* Constants.swift in Sources */,
 				F8A680DE22AB5B3500C05971 /* AppDelegate.swift in Sources */,
+				F87B100222CC437D007A9CEC /* TransactionTableViewCell.swift in Sources */,
 				F8A680F422AB5B9500C05971 /* FloatingAddButton.swift in Sources */,
+				F87B100422CD7A8C007A9CEC /* CardTableViewCell.swift in Sources */,
 				F8A6EAAE22AB647800F0DC0E /* AddCardViewController.swift in Sources */,
+				F87B100822CD7B6B007A9CEC /* HelperFunctions.swift in Sources */,
 				F8189A3B22C1981F00F4057F /* AuthenticationController.swift in Sources */,
 				F8E297A822BF227400CE04B9 /* TransactionTableViewController.swift in Sources */,
 				F89FF35022BF2A2100A86372 /* AddItemView.swift in Sources */,

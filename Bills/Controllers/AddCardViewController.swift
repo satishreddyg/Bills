@@ -88,6 +88,10 @@ class AddCardViewController: UIViewController {
         }
     }
     
+    private func updateCardAndDismiss(card: Card) {
+        
+    }
+    
     private func addTransactionAndDismiss(transaction: Transaction) {
         var ref: DocumentReference? = nil
         ref = db.collection("transactions").addDocument(data: [

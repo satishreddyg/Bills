@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setRootController() {
         let navigationController = UINavigationController(rootViewController: Auth.auth().currentUser == nil ? AuthenticationController() : BankTableViewController())
+        navigationController.navigationBar.prefersLargeTitles = true
         window?.rootViewController = navigationController
     }
 

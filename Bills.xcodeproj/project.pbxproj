@@ -24,6 +24,7 @@
 		F8A6EAAE22AB647800F0DC0E /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6EAAD22AB647800F0DC0E /* AddCardViewController.swift */; };
 		F8A6EAB022AB655F00F0DC0E /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6EAAF22AB655F00F0DC0E /* AddCardView.swift */; };
 		F8A6EAB322AB7D7D00F0DC0E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6EAB222AB7D7D00F0DC0E /* Card.swift */; };
+		F8BE3D4722D06BEC00A10990 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE3D4622D06BEC00A10990 /* FirebaseManager.swift */; };
 		F8E297A422BF1FC500CE04B9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E297A322BF1FC500CE04B9 /* UIViewControllerExtension.swift */; };
 		F8E297A822BF227400CE04B9 /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E297A722BF227400CE04B9 /* TransactionTableViewController.swift */; };
 		F8F68CEB22C19BCD00792FE8 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F68CEA22C19BCD00792FE8 /* AuthenticationView.swift */; };
@@ -41,7 +42,6 @@
 		F87B100522CD7AC4007A9CEC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F87B100722CD7B6B007A9CEC /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		F8937BE722C66C3300CEEC5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F8937BEB22C69D4900CEEC5E /* Bills.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bills.entitlements; sourceTree = "<group>"; };
 		F89FF34F22BF2A2100A86372 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		F89FF35122BF2CE600A86372 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		F8A680DA22AB5B3500C05971 /* Bills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bills.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +54,8 @@
 		F8A6EAAD22AB647800F0DC0E /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		F8A6EAAF22AB655F00F0DC0E /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		F8A6EAB222AB7D7D00F0DC0E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F8BE3D4622D06BEC00A10990 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		F8BE3D4822D0723F00A10990 /* Bills.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bills.entitlements; sourceTree = "<group>"; };
 		F8E297A322BF1FC500CE04B9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F8E297A722BF227400CE04B9 /* TransactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
 		F8F68CEA22C19BCD00792FE8 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		F8A680DC22AB5B3500C05971 /* Bills */ = {
 			isa = PBXGroup;
 			children = (
-				F8937BEB22C69D4900CEEC5E /* Bills.entitlements */,
+				F8BE3D4822D0723F00A10990 /* Bills.entitlements */,
 				F8E297A622BF223600CE04B9 /* SupportingFiles */,
 				F8E297A522BF222500CE04B9 /* Controllers */,
 				F8E297A222BF1FAD00CE04B9 /* Extensions */,
@@ -119,6 +121,7 @@
 				F8A680F222AB5B5400C05971 /* View */,
 				F8A680DD22AB5B3500C05971 /* AppDelegate.swift */,
 				F8F68CEC22C1A47F00792FE8 /* LocalStorage.swift */,
+				F8BE3D4622D06BEC00A10990 /* FirebaseManager.swift */,
 			);
 			path = Bills;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				F87B100222CC437D007A9CEC /* TransactionTableViewCell.swift in Sources */,
 				F8A680F422AB5B9500C05971 /* FloatingAddButton.swift in Sources */,
 				F87B100422CD7A8C007A9CEC /* CardTableViewCell.swift in Sources */,
+				F8BE3D4722D06BEC00A10990 /* FirebaseManager.swift in Sources */,
 				F8A6EAAE22AB647800F0DC0E /* AddCardViewController.swift in Sources */,
 				F87B100822CD7B6B007A9CEC /* HelperFunctions.swift in Sources */,
 				F8189A3B22C1981F00F4057F /* AuthenticationController.swift in Sources */,

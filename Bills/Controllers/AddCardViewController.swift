@@ -23,6 +23,7 @@ class AddCardViewController: UIViewController {
     
     private func setTitle() {
         title = "\(card == nil ? "Adding New Card" : "Adding \(card?.name ?? "") Transaction")"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     fileprivate func presentAddingCardError(_ error: CustomError?) {
@@ -38,6 +39,10 @@ class AddCardViewController: UIViewController {
             self.showAlert(withTitle: "Amount Missing", andMessage: "Please enter how much you spent and continue..", andDefaultTitle: "Got it", andCustomActions: nil)
         case .noSpentOn:
             self.showAlert(withTitle: "Spent at?", andMessage: "Please enter where did you spend and continue..", andDefaultTitle: "Got it", andCustomActions: nil)
+        case .message(let errorMessage):
+            self.showAlert(withTitle: "Error", andMessage: errorMessage, andDefaultTitle: "Got it", andCustomActions: nil)
+        case .unknown:
+            self.showAlert(withTitle: "Unknown Error", andMessage: "Please try again later", andDefaultTitle: "OK", andCustomActions: nil)
         }
     }
     
@@ -74,8 +79,10 @@ class AddCardViewController: UIViewController {
         ref = db.collection("cards").addDocument(data: [
             "name": card.name!,
             "last4Digits": card.last4Digits!,
-            "isCreditCard": card.isCreditCard!,
-            "userId": card.userId!
+            "isCreditCard": card.isCreditCard,
+            "userId": card.userId!,
+            "addedOn": card.addedOn!,
+            "modifiedOn": card.modifiedOn!
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -97,10 +104,11 @@ class AddCardViewController: UIViewController {
         ref = db.collection("transactions").addDocument(data: [
             "cost": transaction.cost!,
             "place": transaction.place!,
-            "date": transaction.date!,
             "notes": transaction.notes!,
             "onCardName": "\(card?.name ?? "") - \(card?.last4Digits?.description ?? "")",
-            "userId": transaction.userId!
+            "userId": transaction.userId!,
+            "addedOn": transaction.addedOn!,
+            "modifiedOn": transaction.modifiedOn!
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

@@ -98,8 +98,8 @@ class CardTableViewCell: UITableViewCell {
         guard let _card = cardName?.lowercased() else { return nil }
         switch _card {
         case let str where str.contains("bofa"): return UIImage(named: "bofa")
-        case let str where str.contains("citi"): return UIImage(named: "citi")
         case let str where str.contains("costco"): return UIImage(named: "citi-costco")
+        case let str where str.contains("citi"): return UIImage(named: "citi")
         case let str where str.contains("gas"): return UIImage(named: "costco-gas")
         case let str where str.contains("Smoothie"): return UIImage(named: "costco")
         default: return UIImage(named: "Kroger")
@@ -110,8 +110,8 @@ class CardTableViewCell: UITableViewCell {
         guard let _card = cardName?.lowercased() else { return nil }
         switch _card {
         case let str where str.contains("bofa"): return UIColor.red.cgColor
+        case let str where str.contains("costco"): return UIColor.red.cgColor
         case let str where str.contains("citi"): return UIColor.blue.cgColor
-        case let str where str.contains("costco"): return UIColor.blue.cgColor
         case let str where str.contains("gas"): return UIColor.red.cgColor
         case let str where str.contains("Smoothie"): return UIColor.red.cgColor
         default: return UIColor.red.cgColor

@@ -39,6 +39,7 @@ class TransactionTableViewController: UITableViewController {
     
     private func setTitle() {
         title = "\(TransactionTableViewController.card.name ?? "") Transactions"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     private func getTransactionsForCard() {

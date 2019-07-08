@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 enum CustomError: Error {
-    case noCardName, noLast4Digits, invalidFormat, noAmount, noSpentOn
+    case noCardName, noLast4Digits, invalidFormat, noAmount, noSpentOn, message(errorMessage: String), unknown
 }
 
 class AddCardView: UIView {
@@ -65,8 +65,8 @@ class AddCardView: UIView {
             callback(nil, .invalidFormat)
             return
         }
-
-        let card = Card(withName: cardName, last4Digits: _last4Digits, isCreditCard: isCreditCard.isOn, userId: Auth.auth().currentUser!.uid)
+        let todayDate = Date()
+        let card = Card(withName: cardName, last4Digits: _last4Digits.description, isCreditCard: isCreditCard.isOn, userId: Auth.auth().currentUser!.uid, addedOn: todayDate, modifiedOn: todayDate)
         callback(card, nil)
     }
     

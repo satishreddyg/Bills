@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import FirebaseFirestore
-import FirebaseAuth
 
 class BankTableViewController: UITableViewController {
     
-    let db = Firestore.firestore()
     var cards: [Card] = []
+    private(set) var debitCards: [Card] = []
+    private(set) var creditCards: [Card] = []
+    private let sessionManager = SessionManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,26 +29,40 @@ class BankTableViewController: UITableViewController {
         
         let signOutBarButton = UIBarButtonItem(title: "Sign Out", style: .done, target: self, action: #selector(signOut))
         navigationItem.rightBarButtonItem = signOutBarButton
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress(gesture:)))
+        tableView.addGestureRecognizer(longPressRecognizer)
+    }
+    
+    @objc func longPress(gesture: UILongPressGestureRecognizer) {
+        
+        if gesture.state == .began {
+            let touchPoint = gesture.location(in: tableView)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                print("indexpath row is: \(indexPath.row)")
+            }
+        }
     }
     
     @objc private func signOut() {
-        do {
-            try Auth.auth().signOut()
-            navigationController?.popViewController(animated: true)
-        } catch _ {}
+        guard sessionManager.signOut() else {
+            showAlert(withTitle: "Signout failed", andMessage: "unable to signout at this moment, please try again", andDefaultTitle: "OK", andCustomActions: nil)
+            return
+        }
+        navigationController?.popViewController(animated: true)
     }
 
     private func loadCardData() {
-        db.collection("cards").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot?.documents ?? [] {
-                    print("\(document.documentID) => \(document.data())")
-                    let card = Card(withDict: document.data())
-                    self.cards.append(card)
-                }
+        sessionManager.fetchCards { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let _cards):
+                self.cards = _cards
+                self.debitCards = _cards.filter({!$0.isCreditCard})
+                self.creditCards = _cards.filter({$0.isCreditCard})
                 self.tableView.reloadData()
+            case .failure(let error):
+                self.showAlert(withTitle: "Couldn't load cards", andMessage: error.localizedDescription, andDefaultTitle: "OK", andCustomActions: nil)
             }
         }
     }
@@ -72,33 +86,41 @@ class BankTableViewController: UITableViewController {
         navigationController?.pushViewController(cardVC, animated: true)
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Credit" : "Debit"
+    }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let _view = UIV
+//    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
+        return section == 0 ? creditCards.count : debitCards.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCell", for: indexPath) as! CardTableViewCell
-        let card = cards[indexPath.row]
+        let card = indexPath.section == 0 ? creditCards[indexPath.row] : debitCards[indexPath.row]
         cell.configureCard(card)
-        db.collection("transactions").whereField("onCardName", isEqualTo: "\(card.name!) - \(card.last4Digits!.description)").limit(to: 3).getDocuments() { (querySnapshot, err) in
-            var str: String = ""
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot?.documents ?? [] {
-                    print("\(document.documentID) => \(document.data())")
-                    let transaction = Transaction(withDict: document.data())
-                    str += "* \(transaction.place ?? "") - $\(transaction.cost?.description ?? "") \n"
-                }
+        sessionManager.fetchTransactions(forCard: card) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let str):
+                cell.subTitleLabel.text = str
+                cell.subTitleLabel.setNeedsLayout()
+            case .failure(let error):
+                self.showAlert(withTitle: "Couldn't load transactions", andMessage: error.localizedDescription, andDefaultTitle: "OK", andCustomActions: nil)
             }
-            cell.subTitleLabel.text = str
-            cell.subTitleLabel.setNeedsLayout()
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let card = cards[indexPath.row]
+        let card = indexPath.section == 0 ? creditCards[indexPath.row] : debitCards[indexPath.row]
         let vc = TransactionTableViewController.getTableViewController(forCard: card)
         navigationController?.pushViewController(vc, animated: true)
     }

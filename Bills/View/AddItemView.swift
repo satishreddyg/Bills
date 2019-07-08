@@ -30,6 +30,7 @@ class AddItemView: UIView {
     
     private func setupUI() {
         amountTF = constructTextField(with: "  Enter amount")
+        amountTF.keyboardType = .decimalPad
         spentOnTF = constructTextField(with: "  Where did you spend?")
         notesTextView = UITextView(frame: CGRect(x: 15, y: 15, width: 15, height: 15))
         addSubview(amountTF)
@@ -62,7 +63,7 @@ class AddItemView: UIView {
             callback(nil, .noSpentOn)
             return
         }
-        let transaction = Transaction(withCost: amount, place: spentAt, date: Date(), notes: notesTextView.text, userId: Auth.auth().currentUser!.uid)
+        let transaction = Transaction(withCost: amount, place: spentAt, notes: notesTextView.text, userId: Auth.auth().currentUser!.uid, addedOn: Date(), modifiedOn: Date())
         callback(transaction, nil)
     }
     

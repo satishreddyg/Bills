@@ -16,7 +16,6 @@ class AuthenticationController: UIViewController {
         configureAuthenticationView()
         Auth.auth().addStateDidChangeListener() { auth, user in
             guard user != nil else { return }
-            print("reached here")
             DispatchQueue.main.async {
                 self.navigationController?.pushViewController(BankTableViewController(), animated: true)
             }
@@ -24,6 +23,7 @@ class AuthenticationController: UIViewController {
     }
     
     func configureAuthenticationView() {
+        navigationController?.navigationBar.prefersLargeTitles = false
         view.backgroundColor = .white
         let authenticatedView = AuthenticationView(frame: CGRect(x: 0, y: 15 + 64, width: view.frame.width, height: 200))
         view.addSubview(authenticatedView)

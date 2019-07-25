@@ -13,8 +13,10 @@ class AddItemView: UIView {
     
     private var amountTF: UITextField!
     private var spentOnTF: UITextField!
+    private var happenedOnTF: UITextField!
     private var notesTextView: UITextView!
     private var addButton: UIButton!
+    private var datePicker: UIDatePicker!
 
     var callback: ((_ transaction: Transaction?, _ error: CustomError?) -> ())!
     
@@ -29,12 +31,15 @@ class AddItemView: UIView {
     }
     
     private func setupUI() {
-        amountTF = constructTextField(with: "  Enter amount")
+        amountTF = constructTextField(with: "\tEnter amount")
         amountTF.keyboardType = .decimalPad
-        spentOnTF = constructTextField(with: "  Where did you spend?")
+        spentOnTF = constructTextField(with: "\tWhere did you spend?")
+        happenedOnTF = constructTextField(with: "\tHappened on?")
+        happenedOnTF.tag = 2
         notesTextView = UITextView(frame: CGRect(x: 15, y: 15, width: 15, height: 15))
         addSubview(amountTF)
         addSubview(spentOnTF)
+        addSubview(happenedOnTF)
         addSubview(notesTextView)
         notesTextView.layer.borderWidth = 1
         notesTextView.layer.borderColor = UIColor.darkGray.cgColor
@@ -48,6 +53,15 @@ class AddItemView: UIView {
         addButton.layer.cornerRadius = 25
         addButton.backgroundColor = .purple
         addSubview(addButton)
+        
+        addDatePicker()
+    }
+    
+    private func addDatePicker() {
+        datePicker = UIDatePicker(frame: CGRect.zero)
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+        happenedOnTF.inputView = datePicker
     }
     
     @objc private func addTransactionAndDismiss() {
@@ -63,7 +77,11 @@ class AddItemView: UIView {
             callback(nil, .noSpentOn)
             return
         }
-        let transaction = Transaction(withCost: amount, place: spentAt, notes: notesTextView.text, userId: Auth.auth().currentUser!.uid, addedOn: Date(), modifiedOn: Date())
+        guard let happenedOnString = happenedOnTF.text, !happenedOnString.isEmpty else {
+            callback(nil, .noSpentOn)
+            return
+        }
+        let transaction = Transaction(withCost: amount, place: spentAt, notes: notesTextView.text, userId: Auth.auth().currentUser!.uid, addedOn: Date(), modifiedOn: Date(), happenedOn: happenedOnString)
         callback(transaction, nil)
     }
     
@@ -77,11 +95,20 @@ class AddItemView: UIView {
         return _textfield
     }
     
+    @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        happenedOnTF.text = "\t\(dateFormatter.string(from: sender.date))"
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
+        datePicker.frame = CGRect(x: 0, y: superview!.frame.height - 290, width: superview!.frame.width, height: 290)
         amountTF.frame = CGRect(x: 15, y: 15 + 44, width: superview!.frame.width - 30, height: 50)
         spentOnTF.frame = CGRect(x: 15, y: 124, width: superview!.frame.width - 30, height: 50)
-        notesTextView.frame = CGRect(x: 15, y: 200, width: superview!.frame.width - 30, height: 100)
-        addButton.frame = CGRect(x: 15, y: 330, width: superview!.frame.width - 30, height: 50)
+        happenedOnTF.frame = CGRect(x: 15, y: 189, width: superview!.frame.width - 30, height: 50)
+        notesTextView.frame = CGRect(x: 15, y: 265, width: superview!.frame.width - 30, height: 100)
+        addButton.frame = CGRect(x: 15, y: 395, width: superview!.frame.width - 30, height: 50)
     }
 }

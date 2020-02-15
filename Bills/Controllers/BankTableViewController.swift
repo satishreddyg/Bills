@@ -24,7 +24,8 @@ class BankTableViewController: UITableViewController {
     }
 
     private func loadCardData() {
-        db.collection("Cards").getDocuments() { (querySnapshot, err) in
+        db.collection("Cards").getDocuments() { [weak self] (querySnapshot, err) in
+            guard let self = self else { return }
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -50,7 +51,8 @@ class BankTableViewController: UITableViewController {
 
     @objc private func addNewCard() {
         let cardVC = AddCardViewController()
-        cardVC.cardCallBack = { (card, _) in
+        cardVC.cardCallBack = { [weak self] (card, _) in
+            guard let self = self else { return }
             self.cards.append(card!)
             self.tableView.reloadData()
         }

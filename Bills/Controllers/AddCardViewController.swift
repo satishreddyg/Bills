@@ -43,7 +43,8 @@ class AddCardViewController: UIViewController {
     
     fileprivate func configureAddCardView() {
         let cardView = AddCardView(frame: CGRect(x: 0, y: navigationController?.navigationBar.frame.height ?? 44, width: view.frame.width, height: view.frame.height))
-        cardView.callback = { (card, error) in
+        cardView.callback = { [weak self] (card, error) in
+            guard let self = self else { return }
             guard let _card = card else {
                 self.presentAddingCardError(error)
                 return
@@ -59,7 +60,8 @@ class AddCardViewController: UIViewController {
             return
         }
         let cardView = AddItemView(frame: CGRect(x: 0, y: navigationController?.navigationBar.frame.height ?? 44, width: view.frame.width, height: view.frame.height))
-        cardView.callback = { (transaction, error) in
+        cardView.callback = { [weak self] (transaction, error) in
+            guard let self = self else { return }
             guard let _transaction = transaction else {
                 self.presentAddingCardError(error)
                 return
@@ -75,7 +77,8 @@ class AddCardViewController: UIViewController {
             "name": card.name!,
             "last4Digits": card.last4Digits!,
             "isCreditCard": card.isCreditCard!
-        ]) { err in
+        ]) { [weak self] err in
+            guard let self = self else { return }
             if let err = err {
                 print("Error adding document: \(err)")
                 self.showAlert(withTitle: "Couldn't save card", andMessage: "We couldn't save the card at this moment because of the error: \(err.localizedDescription). Please try again", andDefaultTitle: "OK", andCustomActions: nil)
@@ -95,7 +98,8 @@ class AddCardViewController: UIViewController {
             "date": transaction.date!,
             "notes": transaction.notes!,
             "onCardName": "\(card?.name ?? "") - \(card?.last4Digits?.description ?? "")"
-        ]) { err in
+        ]) { [weak self] err in
+            guard let self = self else { return }
             if let err = err {
                 print("Error adding document: \(err)")
                 self.showAlert(withTitle: "Couldn't add transaction", andMessage: "We couldn't add transaction at this moment because of the error: \(err.localizedDescription). Please try again", andDefaultTitle: "OK", andCustomActions: nil)
